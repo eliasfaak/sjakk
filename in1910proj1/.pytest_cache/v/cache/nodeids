@@ -1,0 +1,5 @@
+[
+  "test_pendulum.py::testpend::testderivative",
+  "test_pendulum.py::testpend::testeq",
+  "test_pendulum.py::testpend::testlen"
+]
