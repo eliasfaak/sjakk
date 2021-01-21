@@ -14,6 +14,7 @@ class GameState():
         ["wR", "wN", "wB", "wQ", "wK", "wB", "wN", "wR"]
         ]
         self.whiteToMove = True
+<<<<<<< HEAD
         self.moveLog = []
 
     def makemove(self, move):
@@ -31,3 +32,6 @@ class move():
         self.endcol = endsq[1]
         self.piecemoved = board[self.startrow][self.startcol]
         self.piececaptured = board[self.endrow][self.endcol]
+=======
+        self.moveLog = True
+>>>>>>> master

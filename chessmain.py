@@ -26,12 +26,16 @@ def main():
     gs = chessengine.GameState()
     loadimages()
     running = True
+<<<<<<< HEAD
     sqselected = () #husker siste rute klikket på
     playerclicks = [] #husker to siste klikk
+=======
+>>>>>>> master
     while running:
         for e in p.event.get():
             if e.type == p.QUIT:
                 running = False
+<<<<<<< HEAD
             elif e.type == p.MOUSEBUTTONDOWN:
                 location = p.mouse.get_pos()
                 print(location)
@@ -54,6 +58,8 @@ def main():
 
 
 
+=======
+>>>>>>> master
 
         clock.tick(MAX_FPS)
         p.display.flip()
