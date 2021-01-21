@@ -11,3 +11,14 @@ Metode for å ikke hente bilder flere ganger.
 def loadimages():
     pieces = ["wP", "wR", "wN", "wB", "wQ", "wK", "bP", "bR", "bQ", "bB", "bN", "bK"]
     IMAGES[piece] = p.transform.slace(p.image.load("brikker/" + piece + ".png"), (SQ_SIZE, SQ_SIZE))
+
+
+"""
+skal håndtere brukerinput og grafikk
+"""
+
+def main():
+    p.init()
+    screen = pdisplay.set_mode((WIDTH,HEIGHT))
+    clock = screen.fill(p.color("white"))
+    gs = che
