@@ -19,7 +19,7 @@ class GameState():
     def makemove(self, move):
         self.board[move.startrow][move.startcol] = "--"
         self.board[move.endrow][move.endcol] = move.piecemoved
-        self.movelog.append(move)
+        self.moveLog.append(move)
         self.whiteToMove = not self.whiteToMove
 
 

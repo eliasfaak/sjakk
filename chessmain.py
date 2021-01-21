@@ -34,8 +34,10 @@ def main():
                 running = False
             elif e.type == p.MOUSEBUTTONDOWN:
                 location = p.mouse.get_pos()
-                col = location[0]%SQ_SIZE
-                row = location[1]%SQ_SIZE
+                print(location)
+                col = location[0]//SQ_SIZE
+                row = location[1]//SQ_SIZE
+                print(col)
                 if sqselected == (row, col): #klikket på samme rute to ganger
                     sqselected = ()
                     playerclicks = []
@@ -44,6 +46,9 @@ def main():
                     playerclicks.append(sqselected)
                 if len(playerclicks) == 2:
                     move = chessengine.move(playerclicks[0], playerclicks[1],gs.board)
+                    gs.makemove(move)
+                    sqselected = ()
+                    playerclicks = []
 
 
 
