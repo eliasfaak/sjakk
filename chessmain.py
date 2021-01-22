@@ -6,18 +6,18 @@ SQ_SIZE = HEIGHT//DIMENSION
 MAX_FPS = 15
 IMAGES = {}
 
-"""
+'''
 Metode for å ikke hente bilder flere ganger.
-"""
+'''
 def loadimages():
     pieces = ["wP", "wR", "wN", "wB", "wQ", "wK", "bP", "bR", "bQ", "bB", "bN", "bK"]
     for piece in pieces:
         IMAGES[piece] = p.transform.scale(p.image.load("/Users/eliasfakvam/Desktop/gitrepo/brikker/" + piece + ".png"), (SQ_SIZE, SQ_SIZE))
 
 
-"""
+'''
 skal håndtere brukerinput og grafikk
-"""
+'''
 def main():
     p.init()
     screen = p.display.set_mode((WIDTH,HEIGHT))
@@ -26,16 +26,18 @@ def main():
     gs = chessengine.GameState()
     loadimages()
     running = True
-<<<<<<< HEAD
-    sqselected = () #husker siste rute klikket på
-    playerclicks = [] #husker to siste klikk
-=======
->>>>>>> master
+    sqselected = ()
+    '''
+    husker siste rute klikket på
+    '''
+    playerclicks = []
+    '''
+    husker to siste klikk
+    '''
     while running:
         for e in p.event.get():
             if e.type == p.QUIT:
                 running = False
-<<<<<<< HEAD
             elif e.type == p.MOUSEBUTTONDOWN:
                 location = p.mouse.get_pos()
                 print(location)
@@ -58,8 +60,6 @@ def main():
 
 
 
-=======
->>>>>>> master
 
         clock.tick(MAX_FPS)
         p.display.flip()

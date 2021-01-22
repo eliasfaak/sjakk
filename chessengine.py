@@ -1,6 +1,6 @@
-"""
+'''
 Denne klassen lagere all informasjonen om posisjonen og lovelige trekk
-"""
+'''
 class GameState():
     def __init__(self):
         self.board = [
@@ -14,8 +14,8 @@ class GameState():
         ["wR", "wN", "wB", "wQ", "wK", "wB", "wN", "wR"]
         ]
         self.whiteToMove = True
-<<<<<<< HEAD
         self.moveLog = []
+
 
     def makemove(self, move):
         self.board[move.startrow][move.startcol] = "--"
@@ -32,6 +32,3 @@ class move():
         self.endcol = endsq[1]
         self.piecemoved = board[self.startrow][self.startcol]
         self.piececaptured = board[self.endrow][self.endcol]
-=======
-        self.moveLog = True
->>>>>>> master
