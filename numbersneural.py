@@ -1,10 +1,12 @@
-import torch
+import torch as torch
+import numpy as np
 import torchvision
 import torch.nn as nn
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 import torch.optim as optim
 from torchvision import transforms, datasets
+from PIL import Image
 
 train = datasets.MNIST("", train =True, download=True,
         transform=transforms.Compose([transforms.ToTensor()]))
@@ -49,6 +51,7 @@ class Net(nn.Module):
         x = F.relu(self.fc3(x))
         x = self.fc4(x)
         return F.log_softmax(x, dim=1)
+"""
 net = Net()
 optimizer = optim.Adam(net.parameters(), lr = 0.001)
 EPOCHS = 3
@@ -63,15 +66,21 @@ for epoch in range(EPOCHS):
         optimizer.step()
     #print(loss)
 
-correct = 0
-total = 0
+torch.save(net, "net.pth")
+"""
+model = torch.load("net.pth")
+model.eval()
 
-with torch.no_grad():
-    for data in trainset:
-        X, y = data
-        output = net(X.view(-1, 784))
-        for idx, i in enumerate(output):
-            if torch.argmax(i) == y[idx]:
-                correct+=1
-            total+=1
-print(correct/total)
+im = Image.open(r"seven.png")
+ar = np.array(im)
+for data in testset:
+    X, y = data
+    break
+plt.imshow(X[0].view(28,28))
+plt.show()
+img = torch.from_numpy(ar)
+#print(img.view(-1,28*28))
+#print(X)
+#print(type(img))
+img = img.float()
+print(torch.argmax(model(img.view(-1,28*28))[0]))
